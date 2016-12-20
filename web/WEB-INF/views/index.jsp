@@ -1,5 +1,9 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<a href="<%=request.getContextPath()%>?language=en">EN</a>
+<a href="<%=request.getContextPath()%>?language=ru">RU</a>
 
 <html>
 
@@ -8,13 +12,13 @@
 </head>
 
 <body>
-<spring:form method="post" modelAttribute="userJSP" action="check-user">
+<form:form method="post" modelAttribute="userJSP" action="check-user">
 
-    Name: <spring:input path="name"/> <br/>
-    Password: <spring:input path="password"/> <br/>
-    <spring:button>Next Page</spring:button>
+    <spring:message code="name"/> : <form:input path="name"/> <br/>
+    Password: <form:input path="password"/> <br/>
+    <form:button>Next Page</form:button>
 
-</spring:form>
+</form:form>
 
 </body>
 
